@@ -1,4 +1,5 @@
-﻿namespace DesignPatterns.Observer
+﻿
+namespace DesignPatterns.Observer
 {
     internal class User
     {
@@ -12,6 +13,10 @@
             this._isSubscribedToProducts = isSubscribedToProducts;
             this._isSubscribedToOffers = isSubscribedToOffers;
 
-        }   
+        }
+
+        internal void notify(Product product) =>Console.WriteLine("Notifying user about new product"+product._name);
+        internal void notify(Offer offer) => Console.WriteLine("Notifying user about new offer" + offer._message);
+
     }
 }

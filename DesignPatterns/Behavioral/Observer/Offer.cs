@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Observer
+﻿namespace DesignPatterns.Behavioral.Observer
 {
     internal class Offer
     {
@@ -6,8 +6,8 @@
 
         public Offer(string message)
         {
-            this._message = message;
-                
+            _message = message;
+
         }
     }
 }

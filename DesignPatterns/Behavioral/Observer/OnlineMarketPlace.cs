@@ -4,30 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.Observer
+namespace DesignPatterns.Behavioral.Observer
 {
     internal class OnlineMarketPlace
     {
         private List<User> _users;
-        
+
         private List<Product> _products;
 
         private List<Offer> _offers;
 
         public OnlineMarketPlace()
         {
-            this._users = new List<User>();
-            this._products = new List<Product>();
-            this._offers = new List<Offer>();
+            _users = new List<User>();
+            _products = new List<Product>();
+            _offers = new List<Offer>();
 
-                
+
         }
 
-        public void addUser(User user) => this._users.Add(user);
+        public void addUser(User user) => _users.Add(user);
 
-        public void addNewProduct(Product product) 
+        public void addNewProduct(Product product)
         {
-            this._products.Add(product);
+            _products.Add(product);
             notifyUsers(product);
 
         }
@@ -43,9 +43,9 @@ namespace DesignPatterns.Observer
             });
         }
 
-        public void addNewOffer(Offer offer )
+        public void addNewOffer(Offer offer)
         {
-            this._offers.Add(offer);
+            _offers.Add(offer);
             notifyUsers(offer);
 
         }

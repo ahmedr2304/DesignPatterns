@@ -1,9 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 // Check for Testing The Observer Pattern 
-using DesignPatterns.Observer;
-using System.Collections.ObjectModel;
+using DesignPatterns.Behavioral.Observer;
 
+using System.Collections.ObjectModel;
+#region Behavioral
+
+    #region Observer
 OnlineMarketPlace onlineMarketPlace = new OnlineMarketPlace();
 //Name: "Ahmed", isSubscribedToProducts :true,]isSubscribedToOffers : true
 onlineMarketPlace.addUser(new User("Ahmed", true, true));
@@ -17,6 +20,11 @@ onlineMarketPlace.addUser(new User("Mostafa", false, false));
 onlineMarketPlace.addNewProduct(new Product("Mobile", 1000.0));
 // Add new Offer _message :"This new Offer with 20% discount for every item " 
 onlineMarketPlace.addNewOffer(new Offer(" This new Offer with 20% discount for every item "));
+
+#endregion
+
+#endregion
+
 
 
 

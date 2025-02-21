@@ -15,8 +15,10 @@ namespace DesignPatterns.Observer
 
         }
 
-        internal void notify(Product product) =>Console.WriteLine("Notifying user about new product"+product._name);
-        internal void notify(Offer offer) => Console.WriteLine("Notifying user about new offer" + offer._message);
+        
+
+        internal void notify(Product product) =>Console.WriteLine("Notifying user :  " + this._name + " about new product : "+product._name);
+        internal void notify(Offer offer) => Console.WriteLine("Notifying user : " + this._name + " about new offer : " + offer._message);
 
     }
 }

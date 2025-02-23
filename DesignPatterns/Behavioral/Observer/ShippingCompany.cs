@@ -1,6 +1,4 @@
-﻿
-
-namespace DesignPatterns.Behavioral
+﻿namespace DesignPatterns.Behavioral.Observer
 {
     internal class ShippingCompany : ISubscriber
     {
@@ -8,7 +6,7 @@ namespace DesignPatterns.Behavioral
 
         public ShippingCompany(string name)
         {
-            this._name = name;
+            _name = name;
 
         }
         public void notify(string message) => Console.WriteLine(_name + " is receiveing new message about : " + message);

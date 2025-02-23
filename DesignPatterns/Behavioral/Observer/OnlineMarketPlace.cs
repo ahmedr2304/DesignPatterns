@@ -1,10 +1,4 @@
-﻿using DesignPatterns.Behavioral.Observer.Enum;
-using DesignPatterns.Behavioral.Observer.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace DesignPatterns.Behavioral.Observer
 {
@@ -17,6 +11,8 @@ namespace DesignPatterns.Behavioral.Observer
         private List<Product> _products;
 
         private List<Offer> _offers;
+
+        
 
         public OnlineMarketPlace()
         {
@@ -40,15 +36,12 @@ namespace DesignPatterns.Behavioral.Observer
         }
 
         public void subscribe(EventType eventType, ISubscriber subscriber) 
-        {
-            _subscribers.GetValueOrDefault(eventType)!.Add(subscriber);
-        }
+                    => _subscribers.GetValueOrDefault(eventType)!.Add(subscriber);
+        
 
         public void unSubscribe(EventType eventType, ISubscriber subscriber)
-        {
-            _subscribers.GetValueOrDefault(eventType)!.Remove(subscriber);
-        }
-
+                    => _subscribers.GetValueOrDefault(eventType)!.Remove(subscriber);
+        
         
 
         public void addNewProduct(Product product)
@@ -67,12 +60,21 @@ namespace DesignPatterns.Behavioral.Observer
             //notifyUsers(offer);
 
         }
-
-        private void notifySubcribers(EventType eventType, string message)
+        public void addJob_Opening(string jobTitle)
         {
-            _subscribers.GetValueOrDefault(eventType)!.ForEach(subscribe => subscribe.notify(message));
+            
+            notifySubcribers(EventType.JOB_OPENING, "New opening Position is available  : " + jobTitle);
+            //notifyUsers(offer);
+
         }
 
+
+
+       
+       
+        private void notifySubcribers(EventType eventType, string message)
+                     => _subscribers.GetValueOrDefault(eventType)!.ForEach(subscribe => subscribe.notify(message));
+        
 
         // public void addUser(User user) => _users.Add(user);
 
